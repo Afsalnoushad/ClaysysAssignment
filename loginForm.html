@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <style>
+
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    .form-1 {
+      margin-bottom: 15px;
+    }
+
+    .form-1 label {
+      display:block;
+      margin-bottom: 5px;
+    }
+
+    .form-1 input {
+      width: 100%;
+      padding: 5px;
+    }
+
+    .form-1 button {
+      width: 100%;
+      padding: 10px;
+      background-color:lightgreen;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-1 button:hover {
+      background-color:darkgreen;
+    }
+
+    .form-1 input[type="checkbox"] {
+      display: inline-block;
+      width: auto;
+      margin-right: 5px;
+    }
+
+    .form-1 .remember-me{
+        display: inline-block;
+    }
+    .form-1 .forgot-pass{
+        text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login Form</h2>
+    <form>
+      <div class="form-1">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-1">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-1">
+        <input type="checkbox" id="remember" name="remember"">
+        <label class="remember-me" for="remember">Remember me</label>
+        <p class="forgot-pass"><a href="#">Forgot password?</a></p>
+      </div>
+      <div class="form-1">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+    <p>Not a member? <a href="#">Sign up now</a></p>
+    
+  </div>
+</body>
+</html>
