@@ -1,6 +1,7 @@
 # ClaysysAssignment
 
-Day 1 Completed 
+Day 1 - HTML - Completed 
+
 
 
 
