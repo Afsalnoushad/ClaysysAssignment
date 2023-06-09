@@ -51,7 +51,24 @@
       background-color: #333;
       color: #fff;
       padding: 20px;
-      text-align: center;
+      text-align: right; /* Align the content to the right */
+      display: flex; /* Enable flexbox layout */
+      justify-content: flex-end; /* Align the social media logos to the right */
+      align-items: center; /* Vertically center the logos */
+    }
+
+    footer p {
+      margin-right: 20px; /* Add margin to create space between the text and logos */
+    }
+
+    .social-media-logos {
+      display: flex;
+    }
+
+    .social-media-logos img {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px; /* Add spacing between the logos */
     }
 
     @media screen and (max-width: 600px) {
@@ -71,8 +88,12 @@
       nav ul li {
         margin-bottom: 5px;
       }
-    }
     
+    }
+
+    .body{
+      height: fit-content;
+    }
   </style>
 </head>
 <body>
@@ -88,10 +109,19 @@
     </nav>
   </header>
 
-   <h5>Content goes here !!</h5>
+  <div class="body">
+    <img src="bg1.avif" alt="background image">
+  </div>   
 
   <footer>
     <p>&copy; 2023 ClaySys Technologies. All rights reserved.</p>
+    <div class="social-media-logos">
+      <img src="facebook.svg" alt="facebook logo">
+      <img src="twitter.svg" alt="twitter logo">
+      <img src="youtube.svg" alt="youtube logo">
+      <img src="linkedin.svg" alt="linkedin logo">
+      <img src="instagram.svg" alt="instagram logo">
+    </div>
   </footer>
 </body>
 </html>
