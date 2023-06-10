@@ -123,7 +123,7 @@
     <form>
         <div class="form-group">
             <label for="first-name">First name</label>
-            <input type="text" id="first-name" name="first-name" required>
+            <input type="text" id="first-name" name="first-name" required onfocusout="validateFirstName()">
         </div>
 
         <div class="form-group">
@@ -140,6 +140,20 @@
             <label for="age">Age</label>
             <input type="number" id="age" name="age" required>
         </div>
+
+        <script>
+            // JavaScript code for setting the age according to dob
+            
+            const dobInput = document.getElementById('dob');
+            const ageInput = document.getElementById('age');
+
+            dobInput.addEventListener('change', function() {
+                const dob = new Date(this.value);
+                const today = new Date();
+                const age = today.getFullYear() - dob.getFullYear();
+                ageInput.value = age;
+            });
+        </script>
 
         <div class="form-group">
             <label>Gender:</label>
@@ -166,7 +180,7 @@
 
         <div class="form-group">
             <label for="state">State</label>
-            <select id="state" name="state" required>
+            <select id="state" name="state" onchange="updateCities()" required>
                 <option value="">Select State</option>
                 <option value="state1">Kerala</option>
                 <option value="state2">Bangalore</option>
@@ -178,17 +192,41 @@
             <label for="city">City</label>
             <select id="city" name="city" required>
                 <option value="">Select City</option>
-                <option value="city1">Trivandrum</option>
-                <option value="city2">Ernakulam</option>
-                <option value="city3">Kozhikode</option>
-                <option value="city4">Basavanagudi</option>
-                <option value="city5">Indira Nagar</option>
-                <option value="city6">Jayanagar</option>
-                <option value="city7">Chennai</option>
-                <option value="city8">Coimbatore</option>
-                <option value="city9">Madurai</option>
             </select>
         </div>
+
+        <script>
+            // JavaScript code for updating city options based on the selected state
+            
+            const stateInput = document.getElementById('state');
+            const cityInput = document.getElementById('city');
+            
+            const citiesByState = {
+                state1: ['Trivandrum', 'Ernakulam', 'Kozhikode'],
+                state2: ['Basavanagudi', 'Indira Nagar', 'Jayanagar'],
+                state3: ['Chennai', 'Coimbatore', 'Madurai']
+            };
+            
+            function updateCities() {
+                const selectedState = stateInput.value;
+                cityInput.innerHTML = ''; // Clear previous options
+                
+                if (selectedState && citiesByState[selectedState]) {
+                    citiesByState[selectedState].forEach(city => {
+                        const option = document.createElement('option');
+                        option.value = city;
+                        option.textContent = city;
+                        cityInput.appendChild(option);
+                    });
+                } else {
+                    
+                    const option = document.createElement('option');
+                    option.value = '';
+                    option.textContent = 'Select City';
+                    cityInput.appendChild(option);
+                }
+            }
+        </script>
 
         <div class="form-group">
             <label for="username">Username</label>

@@ -107,10 +107,12 @@
       <div class="form-1">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
+        <p id="username-error" class="error-message"></p>
       </div>
       <div class="form-1">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+        <p id="password-error" class="error-message"></p>
       </div>
       <div class="form-1">
         <input type="checkbox" id="remember" name="remember">
@@ -122,6 +124,45 @@
       </div>
     </form>
     <p>Not a member? <a href="#">Sign up now</a></p>
+    <script>
+      // JavaScript code for form validation
+  
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+  
+      usernameInput.addEventListener('focusout', validateUsername);
+      passwordInput.addEventListener('focusout', validatePassword);
+  
+      function validateUsername() {
+        const username = usernameInput.value.trim();
+  
+        if (username === '') {
+          showError('username', 'Username is required.');
+        } else {
+          hideError('username');
+        }
+      }
+  
+      function validatePassword() {
+        const password = passwordInput.value.trim();
+  
+        if (password === '') {
+          showError('password', 'Password is required.');
+        } else {
+          hideError('password');
+        }
+      }
+  
+      function showError(field, message) {
+        const errorElement = document.getElementById(`${field}-error`);
+        errorElement.textContent = message;
+      }
+  
+      function hideError(field) {
+        const errorElement = document.getElementById(`${field}-error`);
+        errorElement.textContent = '';
+      }
+    </script>
   </div>
 </body>
 </html>
