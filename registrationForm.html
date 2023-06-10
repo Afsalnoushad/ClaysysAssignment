@@ -245,5 +245,19 @@
 
         <input type="submit" value="Register">
     </form>
+
+    <script>
+        function validateFirstName() {
+            const firstNameInput = document.getElementById('first-name');
+            const firstName = firstNameInput.value.trim();
+            const regex = /^[a-zA-Z]+$/;
+
+            if (!regex.test(firstName)) {
+                firstNameInput.setCustomValidity('Please enter a valid first name (only alphabets allowed).');
+            } else {
+                firstNameInput.setCustomValidity('');
+            }
+        }
+    </script>
 </body>
 </html>
