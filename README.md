@@ -1,6 +1,6 @@
 # ClaysysAssignment
 
-Day 2 - CSS - Completed 
+Day 3 - Javascript - Completed 
 
 
 
