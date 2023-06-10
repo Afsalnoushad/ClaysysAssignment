@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scroll-down Navigation Bar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 2000px; /* Just for demonstration purposes */
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px;
+      color: #fff;
+      transition: top 0.3s ease-in-out;
+    }
+
+    .navbar.hidden {
+      top: -50px;
+    }
+  </style>
+  <script>
+    var prevScrollpos = window.pageYOffset;
+
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").classList.remove("hidden");
+      } else {
+        document.getElementById("navbar").classList.add("hidden");
+      }
+
+      prevScrollpos = currentScrollPos;
+    };
+  </script>
+</head>
+<body>
+  <div id="navbar" class="navbar">
+    <a href="#section1">Section 1</a>
+    <a href="#section2">Section 2</a>
+    <a href="#section3">Section 3</a>
+  </div>
+
+  <!-- Content goes here with various sections -->
+  <div id="section1">
+    <h1>Section 1</h1>
+  </div>
+
+  <div id="section2">
+    <h1>Section 2</h1>
+  </div>
+
+  <div id="section3">
+    <h1>Section 3</h1>
+  </div>
+</body>
+</html>
+In this example, the navigation bar is created using a <div> element with the navbar class. It is initially positioned at the top of the page using CSS position: fixed and top: 0. The navigation links (<a>) are added inside the navigation bar.
+
+The JavaScript code adds an onscroll event listener to the window object. It tracks the scroll position by comparing the previous scroll position (prevScrollpos) with the current scroll position (currentScrollPos). When the user scrolls down, the navigation bar is hidden by adding the hidden class to it, and when the user scrolls up, the hidden class is removed to show the navigation bar again.
+
+You can customize the appearance of the navigation bar and add more sections or links as needed. The sections are represented by the <div> elements with unique IDs (section1, section2, section3). The navigation links are set to point to these sections using the href attribute. Adjust the content inside the sections to match your desired webpage structure.
+
+With this code, as the user scrolls down, the navigation bar will hide, providing a more streamlined view of the content. When the user scrolls up, the navigation bar will reappear.
+
+
+
+
+
+
