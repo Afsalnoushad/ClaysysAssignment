@@ -52,3 +52,8 @@
         firstNameInput.setCustomValidity('');
     }
 }
+
+function redirectToHome() {
+    // Redirect to the home page
+    window.location.href = "signin.html";
+  }

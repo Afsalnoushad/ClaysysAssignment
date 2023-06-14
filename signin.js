@@ -34,3 +34,8 @@ function hideError(field) {
   const errorElement = document.getElementById(`${field}-error`);
   errorElement.textContent = '';
 }
+
+function redirectToHome() {
+  // Redirect to the home page
+  window.location.href = "home.html";
+}
