@@ -1,143 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="home.css">
   <title>Claysys Technologies</title>
-
-  <style>
-    /* CSS styles */
-  
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #d43ee1, #631ccd, #23bfeb);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-  
-    header {
-      background-color: #f2f2f2;
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-    header img {
-      width: 110px;
-      height: 60px;
-      vertical-align: middle;
-    }
-  
-    nav {
-      display: flex;
-      margin-left: 20px;
-    }
-  
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-  
-    nav ul li {
-      margin-right: 15px;
-      align-content: center;
-    }
-  
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-    }
-  
-    .container {
-      width: 50%;
-      flex: 1;
-      height: calc(100vh - 110px); /* Adjust the value based on your requirements */
-    }
-
-  
-    .container .overlay {
-      text-align: center;
-      color: rgb(255, 255, 255);
-    }
-  
-    
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 15px;
-      text-align: right;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: auto;
-    }
-  
-    footer p {
-      margin-right: 20px;
-    }
-  
-    .social-media-logos {
-      display: flex;
-    }
-  
-    .social-media-logos img {
-      width: 20px;
-      height: 20px;
-      margin-left: 5px;
-    }
-  
-    @media screen and (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-      }
-  
-      nav {
-        margin-top: 10px;
-      }
-  
-      nav ul {
-        flex-direction: row;
-      }
-  
-      nav ul li {
-        margin-bottom: 5px;
-      }
-    }
-
-  .container .container-2 .slideshow img{
-    width: 90%;
-    margin-top: -410px;
-    margin-left: 800px;
-    border-radius: 3%;
-  } 
- 
-  </style>
-
-  
 </head>
 <body>
   <header>
     <img src="images/logo.png" alt="Logo">
     <nav>
       <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Sign In</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="aboutUs.html">About us</a></li>
+        <li><a href="signin.html">Sign in</a></li>
+        <li><a href="signup.html">Sign up</a></li>
+        <li><a href="contactUs.html">Contact us</a></li>
       </ul>
     </nav>
   </header>
   <div class="container">
     <div class="overlay">
       <h2>What we do</h2>
-      <h4>The Work We Do</h4>
+      <h4>The work we do</h4>
       <p style="font-size: small;">ClaySys, as a technology consulting service provider, specializes in delivering IT solutions that make a positive impact on businesses. Our focus is not only on a successful technical implementation, but we are mindful of the business impact all through the project, to ensure we mould and tune the implementation to stay aligned with the key business objectives at all times. We work with a wide portfolio of technologies and products, to enable us to deliver real value to our customers and to provide consulting services to our customers with their existing investments in their technology platforms. If you have a defined requirement, our technology consultants would be able to plan, design and develop your custom solution, in most cases based on a fixed price engagement. The ability to engage on a fixed price basis is dependent on the client's solution requirements being defined in enough detail. We also have an option to support a client to initially create and finalize the requirements and design, at which point we could transition to a fixed price engagement for the development and final deliverable phase.</p>
-      <h4>Why We Are Different</h4>
+      <h4>Why we are different</h4>
       <p style="font-size: small;">ClaySys has always focused on a partnership model and building long term relationships with our clients. So our focus is always the best interests of our clients, versus just a specific technology project. We believe in retaining key employees, as that ensures continuity of quality support to our clients, without the disruption associated with a constant churn and attrition with employees. Since we are a software product company as well, we try to adhere to the highest standards in terms of technology architecture, patterns, security practices, and solution scalability and maintainability.</p>
       <h4>Who we are</h4>
       <p style="font-size: small;">ClaySys was founded to deliver technology solutions that positively impacted the business, versus just technology solutions that were technically excellent, but may not have delivered on the key business objectives. We achieve this through a structured methodology that maps the business impact on every aspect of the technology solution being designed and developed. The core team at ClaySys are tenured IT Consultants who were involved in large scale technology projects starting from the early nineties.</p>
@@ -163,33 +47,7 @@
       <img src="images/instagram.svg" alt="instagram logo">
     </div>
   </footer>
-  <script>
-    // JavaScript code for slideshow
-    const slideshow = document.querySelector('.slideshow');
-    const images = Array.from(slideshow.getElementsByTagName('img'));
-    let currentSlide = 0;
-
-    function showSlide() {
-      images.forEach((image) => {
-        image.style.display = 'none';
-      });
-
-      images[currentSlide].style.display = 'block';
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % images.length;
-      showSlide();
-    }
-
-    function previousSlide() {
-      currentSlide = (currentSlide - 1 + images.length) % images.length;
-      showSlide();
-    }
-
-    showSlide(); // Show initial slide
-
-    setInterval(nextSlide, 3000); // Auto-advance to the next slide every 3 seconds
+  <script src="home.js">
   </script>
    
 </body>

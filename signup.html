@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up form</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <h2>Sign up form</h2>
+    <form>
+        <div class="form-group">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first-name" required onfocusout="validateFirstName()">
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" name="last-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4" cols="30" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state" onchange="updateCities()" required>
+                <option value="">Select State</option>
+                <option value="state1">Kerala</option>
+                <option value="state2">Bangalore</option>
+                <option value="state3">Tamil Nadu</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+                <option value="">Select City</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Confirm password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script src="signup.js">
+    </script>
+</body>
+</html>
