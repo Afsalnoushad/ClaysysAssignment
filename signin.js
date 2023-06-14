@@ -1,41 +1,43 @@
+// Form validation
+function validateForm(event) {
+  event.preventDefault(); 
 
-const usernameInput = document.getElementById('username');
-const passwordInput = document.getElementById('password');
+  // Get form inputs
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
 
-usernameInput.addEventListener('focusout', validateUsername);
-passwordInput.addEventListener('focusout', validatePassword);
+  // Get error message elements
+  const usernameError = document.getElementById('username-error');
+  const passwordError = document.getElementById('password-error');
 
-function validateUsername() {
-  const username = usernameInput.value.trim();
+  // Clear previous error messages
+  usernameError.textContent = '';
+  passwordError.textContent = '';
 
-  if (username === '') {
-    showError('username', 'Username is required.');
-  } else {
-    hideError('username');
+  // Perform validation checks
+  let isValid = true;
+
+  if (usernameInput.value.trim() === '') {
+    usernameError.textContent = 'Please enter your username.';
+    isValid = false;
   }
-}
 
-function validatePassword() {
-  const password = passwordInput.value.trim();
-
-  if (password === '') {
-    showError('password', 'Password is required.');
-  } else {
-    hideError('password');
+  if (passwordInput.value.trim() === '') {
+    passwordError.textContent = 'Please enter your password.';
+    isValid = false;
+  } else if (passwordInput.value.trim().length < 6) {
+    passwordError.textContent = 'Password should contain at least 6 characters.';
+    isValid = false;
   }
+
+  // If validation fails, stop execution
+  if (!isValid) {
+    return;
+  }
+
+  // Validation passed, redirect to home page (replace with your desired URL)
+  window.location.href = 'home.html';
 }
 
-function showError(field, message) {
-  const errorElement = document.getElementById(`${field}-error`);
-  errorElement.textContent = message;
-}
-
-function hideError(field) {
-  const errorElement = document.getElementById(`${field}-error`);
-  errorElement.textContent = '';
-}
-
-function redirectToHome() {
-  // Redirect to the home page
-  window.location.href = "home.html";
-}
+// Add event listener to the form submit button
+document.querySelector('form').addEventListener('submit', validateForm);
