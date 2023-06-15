@@ -1,35 +1,77 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 30px;
-    background-color: #f2f2f2;
+    background: linear-gradient(to bottom right, #d43ee1, #631ccd, #23bfeb);
+
   }
+
+  .header-1 {
+    background-color: #f2f2f2;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-1 img {
+    width: 110px;
+    height: 60px;
+    vertical-align: middle;
+  }
+
+  .header-1 nav {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  .header-1 nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .header-1 nav ul li {
+    margin-right: 15px;
+    align-content: center;
+  }
+
+  .header-1 nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+
   .container{
   display:block;
   align-items: center;
   align-content: center;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 80px;
+  margin-bottom: 80px;  
   }
 
   .container h1 {
-    color: #333;
+    color: rgb(255, 255, 255);
     text-align: center;
   }
 
   .container h2 {
-    color: #555;
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
   }
 
   .container p {
     margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+
   }
 
   .ul-1{
     margin: 0;
     padding: 0;
     list-style-type: none;
+    color: rgb(255, 255, 255);
 
   }
 
@@ -41,6 +83,7 @@ body {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   input[type="text"],
@@ -64,6 +107,35 @@ body {
 
   input[type="submit"]:hover {
     background-color: #45a049;
+  }
+
+  .form-1 {
+    color: rgb(255, 255, 255);
+
+  }
+  .footer-1 {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .footer-1 p {
+    margin-right: 20px;
+  }
+
+  .social-media-logos {
+    display: flex;
+  }
+
+  .social-media-logos img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
   }
 
   @media screen and (max-width: 600px) {
