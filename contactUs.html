@@ -5,11 +5,12 @@
   <link rel="stylesheet" href="contactUs.css">
 </head>
 <body>
+  <div class="container">
   <h1>Contact Us</h1>
   <button class="home-button" onclick="redirectToHome()">Go to Home Page</button>
   <h2>Contact Information</h2>
   <p>If you have any questions or inquiries, please feel free to contact us:</p>
-  <ul>
+  <ul class="ul-1">
     <li>Email: info@claysys.com</li>
     <li>Phone: +91-484-297-5311</li>
     <li>Address: ClaySys Technologies Pvt Ltd
@@ -17,24 +18,24 @@
         Kochi, Kerala
         India, 682303</li>
   </ul>
-
   <h2>Contact Form</h2>
   <form>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <input type="text" id="name" name="name" required>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" required>
 
     <label for="subject">Subject:</label>
-    <input type="text" id="subject" name="subject" required><br><br>
+    <input type="text" id="subject" name="subject" required>
 
     <label for="message">Message:</label>
     <textarea id="message" name="message" rows="4" cols="30" required></textarea><br><br>
 
     <input type="submit" value="Submit">
+  
   </form>
-
+</div>
   <script src="contactUs.js">
 
   </script>

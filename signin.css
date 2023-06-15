@@ -76,13 +76,13 @@
     width: 100%;
   }
 
-  p {
+  .container p {
     text-align: center;
     font-size: 14px;
     color: #333;
   }
 
-  a {
+  .container a {
     text-decoration: none;
     color: #4CAF50;
     font-weight: bold;
