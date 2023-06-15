@@ -27,7 +27,7 @@
    
    function updateCities() {
        const selectedState = stateInput.value;
-       cityInput.innerHTML = ''; // Clear previous options
+       cityInput.innerHTML = ''; 
        
        if (selectedState && citiesByState[selectedState]) {
            citiesByState[selectedState].forEach(city => {
@@ -46,7 +46,7 @@
    }
 
    function validateForm(event) {
-    event.preventDefault(); // Prevent the form from submitting by default
+    event.preventDefault(); 
 
     // Perform form validation
     var firstName = document.getElementById('first-name').value;
@@ -68,9 +68,18 @@
         alert('Please enter your first name.');
         return;
     }
+    if (!/^[A-Za-z]+$/.test(firstName.trim())) {
+        alert('First name should contain only letters.');
+        return;
+    }
 
     if (lastName.trim() === '') {
         alert('Please enter your last name.');
+        return;
+    }
+
+    if (!/^[A-Za-z]+$/.test(lastName.trim())) {
+        alert('Last name should contain only letters.');
         return;
     }
 
@@ -91,6 +100,11 @@
 
     if (phone.trim() === '') {
         alert('Please enter your phone number.');
+        return;
+    }
+
+    if (phone.trim().length !== 10 || !/^\d+$/.test(phone.trim())) {
+        alert('Phone number should be a 10-digit number.');
         return;
     }
 
@@ -124,6 +138,16 @@
         return;
     }
 
+    if (password.length < 8) {
+        alert('Password should be at least 8 characters long.');
+        return;
+    }
+
+    if (!/\d/.test(password) || !/[a-zA-Z]/.test(password)) {
+        alert('Password should contain at least one digit and one letter.');
+        return;
+    }
+
     if (confirmPassword.trim() === '') {
         alert('Please confirm your password.');
         return;
@@ -139,4 +163,3 @@
 
 document.querySelector('form').addEventListener('submit', validateForm);  
 
-  
