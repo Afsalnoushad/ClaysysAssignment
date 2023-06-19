@@ -41,3 +41,29 @@ function validateForm(event) {
 
 // Add event listener to the form submit button
 document.querySelector('form').addEventListener('submit', validateForm);
+
+// Add focus-out validation for username input
+document.getElementById('username').addEventListener('blur', function () {
+  const usernameError = document.getElementById('username-error');
+  const usernameInput = document.getElementById('username');
+
+  usernameError.textContent = '';
+
+  if (usernameInput.value.trim() === '') {
+    usernameError.textContent = 'Please enter your username.';
+  }
+});
+
+// Add focus-out validation for password input
+document.getElementById('password').addEventListener('blur', function () {
+  const passwordError = document.getElementById('password-error');
+  const passwordInput = document.getElementById('password');
+
+  passwordError.textContent = '';
+
+  if (passwordInput.value.trim() === '') {
+    passwordError.textContent = 'Please enter your password.';
+  } else if (passwordInput.value.trim().length < 6) {
+    passwordError.textContent = 'Password should contain at least 6 characters.';
+  }
+});

@@ -47,119 +47,134 @@
 
    function validateForm(event) {
     event.preventDefault(); 
-
+  
+    // Clear previous error messages
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(errorMessage => errorMessage.remove());
+  
     // Perform form validation
-    var firstName = document.getElementById('first-name').value;
-    var lastName = document.getElementById('last-name').value;
-    var dob = document.getElementById('dob').value;
-    var age = document.getElementById('age').value;
-    var gender = document.querySelector('input[name="gender"]:checked');
-    var phone = document.getElementById('phone').value;
-    var email = document.getElementById('email').value;
-    var address = document.getElementById('address').value;
-    var state = document.getElementById('state').value;
-    var city = document.getElementById('city').value;
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    var confirmPassword = document.getElementById('confirm-password').value;
-
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
+    const dob = document.getElementById('dob').value;
+    const age = document.getElementById('age').value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const state = document.getElementById('state').value;
+    const city = document.getElementById('city').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+  
     // Validation check
     if (firstName.trim() === '') {
-        alert('Please enter your first name.');
-        return;
+      displayErrorMessage('Please enter your first name.', 'first-name');
+      return;
     }
     if (!/^[A-Za-z]+$/.test(firstName.trim())) {
-        alert('First name should contain only letters.');
-        return;
+      displayErrorMessage('First name should contain only letters.', 'first-name');
+      return;
     }
-
+  
     if (lastName.trim() === '') {
-        alert('Please enter your last name.');
-        return;
+      displayErrorMessage('Please enter your last name.', 'last-name');
+      return;
     }
-
+  
     if (!/^[A-Za-z]+$/.test(lastName.trim())) {
-        alert('Last name should contain only letters.');
-        return;
+      displayErrorMessage('Last name should contain only letters.', 'last-name');
+      return;
     }
-
+  
     if (dob.trim() === '') {
-        alert('Please enter your date of birth.');
-        return;
+      displayErrorMessage('Please enter your date of birth.', 'dob');
+      return;
     }
-
+  
     if (age.trim() === '') {
-        alert('Please enter your age.');
-        return;
+      displayErrorMessage('Please enter your age.', 'age');
+      return;
     }
-
+  
     if (!gender) {
-        alert('Please select your gender.');
-        return;
+      displayErrorMessage('Please select your gender.', 'gender');
+      return;
     }
-
+  
     if (phone.trim() === '') {
-        alert('Please enter your phone number.');
-        return;
+      displayErrorMessage('Please enter your phone number.', 'phone');
+      return;
     }
-
+  
     if (phone.trim().length !== 10 || !/^\d+$/.test(phone.trim())) {
-        alert('Phone number should be a 10-digit number.');
-        return;
+      displayErrorMessage('Phone number should be a 10-digit number.', 'phone');
+      return;
     }
-
+  
     if (email.trim() === '') {
-        alert('Please enter your email address.');
-        return;
+      displayErrorMessage('Please enter your email address.', 'email');
+      return;
     }
-
+  
     if (address.trim() === '') {
-        alert('Please enter your address.');
-        return;
+      displayErrorMessage('Please enter your address.', 'address');
+      return;
     }
-
+  
     if (state === '') {
-        alert('Please select your state.');
-        return;
+      displayErrorMessage('Please select your state.', 'state');
+      return;
     }
-
+  
     if (city === '') {
-        alert('Please select your city.');
-        return;
+      displayErrorMessage('Please select your city.', 'city');
+      return;
     }
-
+  
     if (username.trim() === '') {
-        alert('Please enter a username.');
-        return;
+      displayErrorMessage('Please enter a username.', 'username');
+      return;
     }
-
+  
     if (password.trim() === '') {
-        alert('Please enter a password.');
-        return;
+      displayErrorMessage('Please enter a password.', 'password');
+      return;
     }
-
+  
     if (password.length < 8) {
-        alert('Password should be at least 8 characters long.');
-        return;
+      displayErrorMessage('Password should be at least 8 characters long.', 'password');
+      return;
     }
-
+  
     if (!/\d/.test(password) || !/[a-zA-Z]/.test(password)) {
-        alert('Password should contain at least one digit and one letter.');
-        return;
+      displayErrorMessage('Password should contain at least one digit and one letter.', 'password');
+      return;
     }
-
+  
     if (confirmPassword.trim() === '') {
-        alert('Please confirm your password.');
-        return;
+      displayErrorMessage('Please confirm your password.', 'confirm-password');
+      return;
     }
-
+  
     if (password !== confirmPassword) {
-        alert('Passwords do not match. Please try again.');
-        return;
+      displayErrorMessage('Passwords do not match. Please try again.', 'confirm-password');
+      return;
     }
-
+  
+    // Validation passed, redirect to the home page
     window.location.href = 'home.html'; 
-}
-
-document.querySelector('form').addEventListener('submit', validateForm);  
-
+  }
+  
+  function displayErrorMessage(message, fieldId) {
+    const errorMessage = document.createElement('span');
+    errorMessage.classList.add('error-message');
+    errorMessage.textContent = message;
+    
+    const field = document.getElementById(fieldId);
+    field.classList.add('invalid');
+    field.parentNode.appendChild(errorMessage);
+  }
+  
+  document.querySelector('form').addEventListener('submit', validateForm);
+  
