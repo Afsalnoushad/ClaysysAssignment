@@ -63,7 +63,7 @@ document.getElementById('password').addEventListener('blur', function () {
 
   if (passwordInput.value.trim() === '') {
     passwordError.textContent = 'Please enter your password.';
-  } else if (passwordInput.value.trim().length < 6) {
-    passwordError.textContent = 'Password should contain at least 6 characters.';
+  } else if (passwordInput.value.trim().length < 8) {
+    passwordError.textContent = 'Password should contain at least 8 characters.';
   }
 });

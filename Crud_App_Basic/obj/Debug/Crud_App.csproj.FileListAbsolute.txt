@@ -1,0 +1,11 @@
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\bin\Debug\Crud_App.exe.config
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\bin\Debug\Crud_App.exe
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\bin\Debug\Crud_App.pdb
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.csproj.AssemblyReference.cache
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.csproj.SuggestedBindingRedirects.cache
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.Form1.resources
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.Properties.Resources.resources
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.csproj.GenerateResource.cache
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.csproj.CoreCompileInputs.cache
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.exe
+C:\Users\afsal\OneDrive\Desktop\Claysys2\Crud_App\obj\Debug\Crud_App.pdb
