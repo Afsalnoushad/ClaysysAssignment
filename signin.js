@@ -25,7 +25,7 @@ function validateForm(event) {
   if (passwordInput.value.trim() === '') {
     passwordError.textContent = 'Please enter your password.';
     isValid = false;
-  } else if (passwordInput.value.trim().length < 6) {
+  } else if (passwordInput.value.trim().length < 8) {
     passwordError.textContent = 'Password should contain at least 6 characters.';
     isValid = false;
   }
